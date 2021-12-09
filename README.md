@@ -5,6 +5,7 @@ This is currently a work in progress. Documentation and instructions for use are
 
 ## Installation
 
+#### PyPi
 ```bash
 python -m "your/path/to/blender/python" pip install bpsci
 ```
