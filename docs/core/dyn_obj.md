@@ -26,6 +26,7 @@ my_obj = bpsc.dyn_obj(obj, pa, euler_type, parent)
 ```python
 my_obj.apply_animation(self, x_list, y_list, z_list, quat_list, frames)
 ```
+Apply a six degree of freedom animation to an object
 
 ###### Arguments
 ```x_list```: an ```nd.array``` that contains the x positional data for the animation
