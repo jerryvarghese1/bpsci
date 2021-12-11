@@ -1,6 +1,6 @@
 ## bpsci Documentation
 
-This page is under construction; please check again soon!
+This page is under construction; it may be incomplete.
 
 ### Site Navigation
 #### [Core Module Documentation](https://jerryvarghese1.github.io/bpsci/core)
