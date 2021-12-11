@@ -10,7 +10,7 @@ my_obj = bpsc.dyn_obj(obj, pa, euler_type, parent)
 ```obj```: a ```bpy.data.object``` that is the object that the animation should be applied to
 <br>```pa```: a ```list``` that contains an Euler angle sequence that represents to rotation of the principle axes from the imported body fixed axes. An argument for a moved center of mass is being developed
 <br>```euler_type```: a ```str``` that represents the Euler angle sequence (i.e. ```'zxz'``` for a 313 Euler angle sequence)
-<br>```parent```: a ```bpy.data.object``` that will become the parent of the ```obj``` object
+<br>```parent```: a ```bpy.data.object``` that will become the parent of the ```obj``` object, can be ```None``` if no parent is desired 
 
 #### Attributes
 ```euler_pa```: : a ```list``` that contains an Euler angle sequence that represents to rotation of the principle axes from the imported body fixed axes
