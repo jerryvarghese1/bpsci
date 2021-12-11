@@ -4,7 +4,7 @@ Internal class, cannot easily be animated. Initializes a reference frame that ot
 
 ### Initialization
 ```python
-bpsc.refframe(name, parent)
+bpsc.ref_frame(name, parent)
 ```
 
 #### Arguments
