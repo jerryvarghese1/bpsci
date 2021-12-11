@@ -45,6 +45,7 @@ euler_pa = [.1, 0, 0] # offset of principal axes from the body fixed imported ax
 euler_type = 'xyz' # Specify Euler angle sequence
 ````
 
+Read data:
 ```python
 file_path = '[fill this in]' # data source
 
