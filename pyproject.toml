@@ -2,7 +2,7 @@
 name = "bpsci"
 version = "0.1.0"
 description = ""
-authors = ["jerryvarghese1 <63359305+jerryvarghese1@users.noreply.github.com>"]
+authors = ["Jerry Varghese <varghese.jerryj@gmail.com"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
