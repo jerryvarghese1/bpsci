@@ -8,6 +8,7 @@ import bpy # import blender python API
 ```
 ##### ```bpy``` must be imported, or ```bpsci``` will not work
 
+#### Click on any of the headers below for specific documentation
 
 ### [```init_anim```](https://jerryvarghese1.github.io/bpsci/core/init_anim)
 Sets up the global animation information such as beginning frame, ending frame, and speed up
