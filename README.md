@@ -3,7 +3,7 @@ High level abstraction meant to create six degree of freedom technical animation
 <br>
 
 https://user-images.githubusercontent.com/63359305/145697796-13da2258-a6b2-441f-9872-fbbc964e5557.mp4
-
+##### Model Attributation - [Snowfall](https://sketchfab.com/3d-models/galileo-orbiter-19c3c6e0c1b548919d11681065fcf65a)
 
 View the documentation [here](https://jerryvarghese1.github.io/bpsci/).
 
