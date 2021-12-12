@@ -4,7 +4,8 @@ Import with:
 
 ```python 
 from bpsci import core as bpsc # core import
-import bpy # import blender python API
+import numpy as np
+import bpy
 ```
 ##### ```bpy``` must be imported, or ```bpsci``` will not work
 
