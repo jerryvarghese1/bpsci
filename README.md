@@ -2,7 +2,7 @@
 High level abstraction meant to create six degree of freedom technical animations in Blender.
 <br>
 
-https://user-images.githubusercontent.com/63359305/145697531-bd295d0d-b0c1-4b46-8aa1-131e2b7fd354.mp4
+https://user-images.githubusercontent.com/63359305/145697796-13da2258-a6b2-441f-9872-fbbc964e5557.mp4
 
 
 View the documentation [here](https://jerryvarghese1.github.io/bpsci/).
