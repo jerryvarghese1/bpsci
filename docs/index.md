@@ -23,10 +23,10 @@ To do so, locate your Blender installation's ```python.exe``` file.
 
 Then run
 ```bash
-"your/path/to/Blender's/python.exe" --target="your/path/to/Blender's/site-packages" -m pip install numpy scipy pandas bpsci
+"your/path/to/Blender's/python.exe" -m pip install numpy scipy pandas bpsci --target="your/path/to/Blender's/site-packages"
 ```
 
-This should install the packages in the correct directory. If this fails, try using the ``--user`` option or running the command as administrator in your command prompt.
+This should install the packages in the correct directory. If this fails, try running the command as administrator in your python enabled command prompt.
 
 #### Use
 
