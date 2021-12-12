@@ -1,6 +1,8 @@
 # bpsci
 High level abstraction meant to create six degree of freedom technical animations in Blender.
-<br>[Uploading Gallileo.webm…]()
+<br>
+
+Uploading Gallileo.mov…
 
 View the documentation [here](https://jerryvarghese1.github.io/bpsci/).
 
