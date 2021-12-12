@@ -9,11 +9,6 @@ View the documentation [here](https://jerryvarghese1.github.io/bpsci/).
 
 This is currently a work in progress. Documentation and instructions for use are incoming, as well as new features useful for scientific visualizations!
 
-#### Installation
-```bash
-python -m "your/path/to/blender/python" pip install bpsci
-```
-
 ### Objectives of bpsci
 ```bpsci``` aims to provide a six degree of freedom simulation backbone to visualize an objects displacement in three dimensions, as well as the three orientation angles, given that the time series data for each degree of freedom has already been simulated. Future functionality with additional scientifically useful visualizations will most likely be added as well.
 
