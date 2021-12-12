@@ -30,7 +30,7 @@ Apply a six degree of freedom animation to an object
 
 ###### Arguments
 ```x_list```: an ```nd.array``` that contains the x positional data for the animation
-<br>```y_list```: an ```nd.array``` that contains the x positional data for the animation
-<br>```z_list```: an ```nd.array``` that contains the x positional data for the animation
+<br>```y_list```: an ```nd.array``` that contains the y positional data for the animation
+<br>```z_list```: an ```nd.array``` that contains the z positional data for the animation
 <br>```quat```: an ```nd.array``` that contains the quaternion orientation information
 <br>```frames```: an ```nd.array``` that takes the ```frames``` attribute of ```init_anim``` class
