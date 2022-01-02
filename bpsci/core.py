@@ -125,15 +125,59 @@ class dyn_obj:
                 bpy.data.objects[name].data.keyframe_insert(data_path='bevel_factor_end', frame=cur_frame)
 
 class dyn_vec:
-    def __init__(self, parent, name):
-        self.parent = parent
+    def __init__(self, obj, name, scale_mag, scale_off, offset):
+        self.parent = obj
         self.name = name+"_vector"
+        
+        self.parent_rf = ref_frame(self.name+"_empty", self.parent)
 
-        self.filepath = __file__.replace("__init__.py", "").replace("\\core.py", "")+'\\assets\\objects\\arrow.obj'
+        self.filepath = self.filepath = __file__.replace("__init__.py", "").replace("\\core.py", "")+'\\assets\\objects\\arrow.obj' #"C:/Users/vargh/Documents/GitHub/bpsci/bpsci/assets/objects/arrow.obj" #bpsci.__file__.replace("__init__.py", "")+'\\assets\\objects\\arrow.obj'
 
         vec = bpy.ops.import_scene.obj(filepath=self.filepath)
         vec = bpy.context.selected_objects[0]
-        vec.parent = self.parent
+        self.vec = vec
+        
+        self.parent_rf.ob.location = offset
+        vec.parent = self.parent_rf.ob
         vec.name = self.name
-
+        
+        self.scale = scale_mag
+        vec.scale = (scale_mag, scale_off, scale_off)
+        
+    def animate(self, x, y, z, frames):
+        max_x = 1
+        max_y = 1
+        max_z = 1
+        
+        if max(x) != 0:
+            max_x = max(x)
+        if max(y) != 0:
+            max_y = max(y)
+        if max(z) != 0:
+            max_z = max(z)
+        
+        norm_x = x/max_x *self.scale
+        norm_y = y/max_y *self.scale
+        norm_z = z/max_z *self.scale
+        
+        self.point_rf = ref_frame(self.name+"_pointing_empty", self.parent)
+        
+        tracking_constraint = self.parent_rf.ob.constraints.new('DAMPED_TRACK')
+        tracking_constraint.target = self.point_rf.ob
+        tracking_constraint.track_axis = 'TRACK_X'
+        
+        for i in range(len(frames)):
+            cur_frame = frames[i]
+            cur_x = norm_x[i]
+            cur_y = norm_y[i]
+            cur_z = norm_z[i]
+                
+            mag_arrow = np.sqrt(cur_x**2 + cur_y**2 + cur_z**2)*self.scale
+            
+            self.parent_rf.ob.scale = (mag_arrow, 1, 1)
+                
+            self.point_rf.ob.location = (cur_x, cur_y, cur_z)
+            
+            self.point_rf.ob.keyframe_insert(data_path='location', frame=cur_frame)
+            self.parent_rf.ob.keyframe_insert(data_path='scale', frame=cur_frame)
 
