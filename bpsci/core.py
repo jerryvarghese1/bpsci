@@ -123,3 +123,17 @@ class dyn_obj:
                 
                 bpy.data.objects[name].data.bevel_factor_end = 1/(frames[-1]) * cur_frame
                 bpy.data.objects[name].data.keyframe_insert(data_path='bevel_factor_end', frame=cur_frame)
+
+class dyn_vec:
+    def __init__(self, parent, name):
+        self.parent = parent
+        self.name = name+"_vector"
+
+        self.filepath = __file__.replace("__init__.py", "").replace("\\core.py", "")+'\\assets\\objects\\arrow.obj'
+
+        vec = bpy.ops.import_scene.obj(filepath=self.filepath)
+        vec = bpy.context.selected_objects[0]
+        vec.parent = self.parent
+        vec.name = self.name
+
+
