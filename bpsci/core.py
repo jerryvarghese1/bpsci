@@ -88,3 +88,38 @@ class dyn_obj:
         
         self.pa_axes.dynamic_6DOF(quat_list, None, None, None, frames)
         self.non_rot.dynamic_6DOF(None, x_list, y_list, z_list, frames)
+        
+    def apply_streamline(self, staticity, int_x, int_y, int_z, frames, thickness):
+        name = self.name+'_streamline'
+        
+        int_size = len(int_x)
+        int_coords = np.zeros((int_size, 3))
+        int_coords[:, 0] = int_x
+        int_coords[:, 1] = int_y
+        int_coords[:, 2] = int_z
+
+        int_curve = bpy.data.curves.new(name, type='CURVE')
+        int_curve.dimensions = '3D'
+        int_curve.resolution_u = 2
+
+        # map coords to spline
+        int_line = int_curve.splines.new('NURBS')
+        int_line.points.add(len(int_coords))
+        for i, coord in enumerate(int_coords):
+            x,y,z = coord
+            int_line.points[i].co = (x, y, z, 1)
+
+        # create Object
+        int_curveOB = bpy.data.objects.new(name, int_curve)
+
+        # attach to scene and validate context
+        bpy.context.collection.objects.link(int_curveOB)
+        
+        int_curveOB.data.bevel_depth = thickness
+        
+        if staticity == 'dynamic':
+            for i in range(len(frames)):
+                cur_frame = frames[i]
+                
+                bpy.data.objects[name].data.bevel_factor_end = 1/(frames[-1]) * cur_frame
+                bpy.data.objects[name].data.keyframe_insert(data_path='bevel_factor_end', frame=cur_frame)
