@@ -16,7 +16,10 @@ Sets up the global animation information such as beginning frame, ending frame, 
 
 ### [```dyn_obj```](https://jerryvarghese1.github.io/bpsci/core/dyn_obj)
 
-Dynamic object class
+Dynamic object class, used to create a animated 6DOF simulation
+
+### [```dyn_vec``` ](https://jerryvarghese1.github.io/bpsci/core/dyn_vec)
+Dynamic vector class, used to create a dynamically moving vector
 
 ### [```ref_frame``` ](https://jerryvarghese1.github.io/bpsci/core/ref_frame)
 Internal class, cannot easily be animated. Initializes a reference frame that other objects and animations can be the child of. In blender, this takes the form of an Empty object. 
