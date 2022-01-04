@@ -82,6 +82,8 @@ class dyn_obj:
         self.body = ref_frame(obj.name+'_body', self.pa_axes.ob)
         
         obj.parent = self.body.ob
+        
+        self.name = obj.name
         self.body.static_6DOF(-self.quat, None, None, None)
         
     def apply_animation(self, x_list, y_list, z_list, quat_list, frames):
