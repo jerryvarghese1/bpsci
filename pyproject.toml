@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "bpsci"
-version = "0.1.0"
+version = "0.1.33"
 description = ""
-authors = ["Jerry Varghese <varghese.jerryj@gmail.com"]
+authors = ["Jerry Varghese <varghese.jerryj@gmail.com>"]
+include = ["assets/*"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-numpy = "^1.21.4"
+numpy = "^1.18.4"
 scipy = "^1.7.3"
-bpy = "^2.82.1"
 pandas = "^1.3.4"
 
 
