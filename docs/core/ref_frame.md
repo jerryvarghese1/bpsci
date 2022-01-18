@@ -1,6 +1,6 @@
 ## ```ref_frame``` 
 
-Internal class, cannot easily be animated. Initializes a reference frame that other objects and animations can be the child of. In blender, this takes the form of an Empty object. 
+Internal class, not recommended for direct use. Initializes a reference frame that other objects and animations can be the child of. In blender, this takes the form of an Empty object. 
 
 ### Initialization
 ```python
