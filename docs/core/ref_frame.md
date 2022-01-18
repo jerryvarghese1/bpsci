@@ -4,9 +4,10 @@ Internal class, cannot easily be animated. Initializes a reference frame that ot
 
 ### Initialization
 ```python
-bpsc.ref_frame(name, parent)
+bpsc.ref_frame(name, parent, anim)
 ```
 
 #### Arguments
 ```name``` : a string that will become the name of the reference frame
 <br>```parent```: a ```bpy.data.object``` that will become the parent of this reference frame
+<br>```anim```: a ```init_anim``` class object that initializes the animation
