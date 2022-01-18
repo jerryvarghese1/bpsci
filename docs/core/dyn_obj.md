@@ -24,7 +24,7 @@ my_obj = bpsc.dyn_obj(obj, pa, euler_type, parent)
 ##### ```apply_animation```
 
 ```python
-my_obj.apply_animation(x_list, y_list, z_list, quat_list, frames)
+my_obj.apply_animation(x_list, y_list, z_list, quat_list)
 ```
 Apply a six degree of freedom animation to an object
 
@@ -33,11 +33,10 @@ Apply a six degree of freedom animation to an object
 <br>```y_list```: an ```nd.array``` that contains the y positional data for the animation
 <br>```z_list```: an ```nd.array``` that contains the z positional data for the animation
 <br>```quat```: an ```nd.array``` that contains the quaternion orientation information
-<br>```frames```: an ```nd.array``` that takes the ```frames``` attribute of ```init_anim``` class
 
 ##### ```apply_streamline```
 ```python
-my_obj.apply_streamline(staticity, x_list, y_list, z_list, frames, thickness)
+my_obj.apply_streamline(staticity, x_list, y_list, z_list, thickness)
 ```
 
 ###### Arguments
@@ -45,6 +44,5 @@ my_obj.apply_streamline(staticity, x_list, y_list, z_list, frames, thickness)
 <br>```x_list```: an ```nd.array``` that contains the x positional data for the animation
 <br>```y_list```: an ```nd.array``` that contains the y positional data for the animation
 <br>```z_list```: an ```nd.array``` that contains the z positional data for the animation
-<br>```frames```: an ```nd.array``` that takes the ```frames``` attribute of ```init_anim``` class
 <br>```thickness```: a ```float``` that specifies the radius of the streamline (purely aesthetic)
 
