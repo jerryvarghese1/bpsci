@@ -3,7 +3,7 @@
 Dynamic vector class
 
 ```python
-my_vec = bpsc.dyn_vec(parent, name, scale_mag, scale_off, offset)
+my_vec = bpsc.dyn_vec(parent, name, scale_mag, scale_off, offset, anim)
 ```
 
 #### Arguments
@@ -25,7 +25,7 @@ my_vec = bpsc.dyn_vec(parent, name, scale_mag, scale_off, offset)
 ##### ```animate```
 
 ```python
-my_vec.animate(x_list, y_list, z_list, frames)
+my_vec.animate(x_list, y_list, z_list)
 ```
 Animate the vector with x,y,z data
 
@@ -33,4 +33,3 @@ Animate the vector with x,y,z data
 ```x_list```: an ```nd.array``` that contains the x positional data for the animation
 <br>```y_list```: an ```nd.array``` that contains the y positional data for the animation
 <br>```z_list```: an ```nd.array``` that contains the z positional data for the animation
-<br>```frames```: an ```nd.array``` that takes the ```frames``` attribute of ```init_anim``` class 
