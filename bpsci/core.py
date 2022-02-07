@@ -160,6 +160,7 @@ class dyn_vec:
         
         self.scale = scale_mag
         vec.scale = (scale_mag, scale_off, scale_off)
+        self.anim = anim
         
         self.frames = anim.frames
     def animate(self, x, y, z):
