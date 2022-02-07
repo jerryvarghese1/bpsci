@@ -180,7 +180,7 @@ class dyn_vec:
         norm_y = y/max_y *self.scale
         norm_z = z/max_z *self.scale
         
-        self.point_rf = ref_frame(self.name+"_pointing_empty", self.parent, anim)
+        self.point_rf = ref_frame(self.name+"_pointing_empty", self.parent, self.anim)
         
         tracking_constraint = self.parent_rf.ob.constraints.new('DAMPED_TRACK')
         tracking_constraint.target = self.point_rf.ob
