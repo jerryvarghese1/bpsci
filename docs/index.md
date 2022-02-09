@@ -1,4 +1,4 @@
-## bpsci Documentation
+<h1><img src="https://user-images.githubusercontent.com/63359305/153303226-3c4b89a6-4d05-4850-a832-0dafebd3454d.png">  bpsci documentation</h1>
 
 This page is under construction; it may be incomplete.
 
