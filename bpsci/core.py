@@ -11,7 +11,7 @@ class init_anim:
         
         self.speed_up = speed_up
         
-        self.frames = np.linspace(1, int(t[-1]*self.frame_rate/speed_up), len(t)).astype(int)
+        self.frames = np.linspace(1, int(t[-1]*self.frame_rate/speed_up+1), len(t)).astype(int)
         
         self.frame_duration = self.frames[-1]
 
@@ -133,7 +133,11 @@ class dyn_obj:
         bpy.context.collection.objects.link(int_curveOB)
         
         int_curveOB.data.bevel_depth = thickness
-        
+        int_curveOB.data.use_fill_caps = True
+
+
+        int_curveOB.data.bevel_factor_start = 0
+
         if staticity == 'dynamic':
             for i in range(len(frames)):
                 cur_frame = frames[i]
