@@ -3,7 +3,8 @@
 This page is under construction; it may be incomplete.
 
 ### Site Navigation
-#### [Core Module Documentation](https://jerryvarghese1.github.io/bpsci/core)
+#### [core Module Documentation](https://jerryvarghese1.github.io/bpsci/core)
+#### [utils Module Documentation](https://jerryvarghese1.github.io/bpsci/utils)
 
 ### Objectives of bpsci
 ```bpsci``` aims to provide a six degree of freedom simulation backbone to visualize an objects displacement in three dimensions, as well as the three orientation angles, given that the time series data for each degree of freedom has already been simulated. Future functionality with additional scientifically useful visualizations will most likely be added as well.
@@ -21,64 +22,17 @@ This tool requires ```scipy```, ```numpy```, and ```pandas``` as external packag
 
 To do so, locate your Blender installation's ```python.exe``` file. 
 
-Then run
+Then run:
 ```bash
 "your/path/to/Blender's/python.exe" -m pip install numpy scipy pandas bpsci --target="your/path/to/Blender's/site-packages"
 ```
 
 This should install the packages in the correct directory. If this fails, try running the command as administrator in your python enabled command prompt.
 
+To update:
+```bash
+"your/path/to/Blender's/python.exe" -m pip install bpsci --update --target="your/path/to/Blender's/site-packages"
+```
+
 #### Use
-
-The ```bpsci``` library allows one to animate an existing object in the Blender viewport. We will be animating the default cube in this tutorial.
-
-Imports:
-```python
-import numpy as np
-import pandas as pd       
-from scipy.spatial.transform import Rotation as R
-import bpy
-
-from bpsci import core as bpsci_core
-```
-
-Initialize Offset of Principal Axes:
-```python
-euler_pa = [.1, 0, 0] # offset of principal axes from the body fixed imported axes as an Euler angle triple
-euler_type = 'xyz' # Specify Euler angle sequence
-````
-
-Read data:
-```python
-file_path = '[fill this in]' # data source
-
-data = pd.read_csv(file_path) # read data from pandas
-t = data['t'].to_numpy() # isolate time variable
-
-# isolate euler angles
-phi = data['phi'].to_numpy()
-theta = data['theta'].to_numpy()
-psi = data['psi'].to_numpy()
-
-# isolate diplacement data
-x = data['x'].to_numpy()
-y = data['y'].to_numpy()
-z = data['z'].to_numpy()
-
-euler_angle = np.vstack([psi, theta, phi]).transpose() # stack euler angle columns into column of euler angle triples
-angles = R.from_euler('zxz', euler_angle).as_quat() # convert euler angle triples into quaternions
-```
-
-Initialize animation:
-```python
-anim = bpsci_core.init_anim(t, 3)
-frames = anim.frames
-```
-
-Actuate animation:
-```python
-cube = bpsci_core.dyn_obj(bpy.data.objects['cube'], euler_pa, euler_type, None)   
-cube.apply_animation(x, y, z, angles, frames)
-```
-
-
+See examples for now. This section will be more thoroughly filled in shortly.
