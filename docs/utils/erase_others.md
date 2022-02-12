@@ -3,6 +3,8 @@
 deletes all objects that contain a given object name but are not the given object name
 
 ```python
+from bpsci.utils import erase_others
+
 erase_others(obj_name)
 ```
 
