@@ -9,7 +9,7 @@ This example models a spin up manuever of the Gallileo spacecraft as published i
 by Longuski, Kia, and Breckenridge. The data was created by running a six degree of freedom numerical simulation in MATLAB with ```ode45```. 
 
 #### Orbital Intercept
-This example models an low-thrust orbital rendezvous between one full cartesian state vector (```r1, r2, r3, v1, v2, v3```) and one position only state vector (```r1, r2, r3```) with velocity components free. It was solved using the [GEKKO library](https://gekko.readthedocs.io/en/latest/) with ```IPOPT```.
+This example models an low-thrust orbital rendezvous between one full cartesian state vector (```r1, r2, r3, v1, v2, v3```) and one position only state vector (```r1, r2, r3```) with velocity components free. It was solved using the [GEKKO library](https://gekko.readthedocs.io/en/latest/) with ```IPOPT```. See source code [here](https://github.com/jerryvarghese1/orbital_intercept)
 
 ### File Structure
 Each example file contains three documents. 
