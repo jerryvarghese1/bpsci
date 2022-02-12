@@ -2,6 +2,8 @@
 Sets up the global animation information such as beginning frame, ending frame, and speed up
 
 ```python
+from bpsci import core as bpsc
+
 anim = bpsc.init_anim(t, speed_up, scale)
 ```
 
