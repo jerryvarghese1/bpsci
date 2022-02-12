@@ -4,6 +4,8 @@ Internal class, not recommended for direct use. Initializes a reference frame th
 
 ### Initialization
 ```python
+from bpsci import core as bpsc
+
 bpsc.ref_frame(name, parent, anim)
 ```
 
