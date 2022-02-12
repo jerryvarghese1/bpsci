@@ -3,6 +3,8 @@
 Dynamic vector class
 
 ```python
+from bpsci import core as bpsc
+
 my_vec = bpsc.dyn_vec(parent, name, scale_mag, scale_off, offset, anim)
 ```
 
