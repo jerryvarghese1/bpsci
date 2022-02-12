@@ -3,6 +3,8 @@
 Dynamic object class
 
 ```python
+from bpsci import core as bpsc
+
 my_obj = bpsc.dyn_obj(obj, pa, euler_type, parent, anim)
 ```
 
