@@ -14,13 +14,13 @@ euler_type = 'xyz' # same as previous
 anim = bpsc.init_anim(data['t'].to_numpy(), 4000, 1/1000) #initialize animation using the time vector, speeding up the simulation 4000x and scaling it to 1/1000 of the original size
 
 asteroid = bpsc.dyn_obj(bpy.data.objects['asteroid'], euler_pa, euler_type, None, anim) # the asteroid's dynamic object
-asteroid.apply_animation(data['t_x'].to_numpy(), data['t_y'].to_numpy(), data['t_z'].to_numpy(), None)
-asteroid.apply_streamline('dynamic', data['t_x'].to_numpy(), data['t_y'].to_numpy(), data['t_z'].to_numpy(), .1)
+asteroid.apply_animation(data['t_x'].to_numpy(), data['t_y'].to_numpy(), data['t_z'].to_numpy(), None) # apply the animation, using None for the angles (since there are no rotational dynamics). 't' stands for target
+asteroid.apply_streamline('dynamic', data['t_x'].to_numpy(), data['t_y'].to_numpy(), data['t_z'].to_numpy(), .1) # create the dynamic streamline based on the same data, with a thickness of .1
 
-orig_orbit = bpsc.dyn_obj(bpy.data.objects['orig_orbit'], euler_pa, euler_type, None, anim)
-orig_orbit.apply_animation(data['i_x'].to_numpy(), data['i_y'].to_numpy(), data['i_z'].to_numpy(), None)
-orig_orbit.apply_streamline('dynamic', data['i_x'].to_numpy(), data['i_y'].to_numpy(), data['i_z'].to_numpy(), .1)
+orig_orbit = bpsc.dyn_obj(bpy.data.objects['orig_orbit'], euler_pa, euler_type, None, anim) # the initial orbit's dynamic object
+orig_orbit.apply_animation(data['i_x'].to_numpy(), data['i_y'].to_numpy(), data['i_z'].to_numpy(), None) # apply the animation, using None for the angles (since there are no rotational dynamics). 't' stands for target
+orig_orbit.apply_streamline('dynamic', data['i_x'].to_numpy(), data['i_y'].to_numpy(), data['i_z'].to_numpy(), .1) # create the dynamic streamline based on the same data, with a thickness of .1
 
-transf_orbit = bpsc.dyn_obj(bpy.data.objects['ship'], euler_pa, euler_type, None, anim)
-transf_orbit.apply_animation(data['r1'].to_numpy(), data['r2'].to_numpy(), data['r3'].to_numpy(), None)
-transf_orbit.apply_streamline('dynamic', data['r1'].to_numpy(), data['r2'].to_numpy(), data['r3'].to_numpy(), .1)
+transf_orbit = bpsc.dyn_obj(bpy.data.objects['ship'], euler_pa, euler_type, None, anim) # the ship's dynamic object (the ship is making the low-thrust transfer)
+transf_orbit.apply_animation(data['r1'].to_numpy(), data['r2'].to_numpy(), data['r3'].to_numpy(), None) # apply the animation, using None for the angles (since there are no rotational dynamics). 't' stands for target
+transf_orbit.apply_streamline('dynamic', data['r1'].to_numpy(), data['r2'].to_numpy(), data['r3'].to_numpy(), .1) # create the dynamic streamline based on the same data, with a thickness of .1
