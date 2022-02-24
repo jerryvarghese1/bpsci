@@ -16,3 +16,8 @@ Each example file contains three documents.
 - The ```.blend``` file contains the final Blender file with code already in the Scripting tab of Blender and already run. This is the final product. 
 - The ```.py``` file is the script that is run from within Blender (in the scripting tab). One can observe that it is the same code as what is in the ```.blend``` file's Scripting tab. 
 - The ```.csv``` file is the source data from the simulations.
+
+### Tips and Tricks
+- ```dyn_obj``` does not create an object. It can only modify an existing object. 
+- If you have complex interconnected systems, try using Blender's ```Empty``` object, either programmatically or by using the GUI. An empty (or any Blender object, for that matter) treats its parent as an inertial frame
+- All Euler angle sequences must be converted to quaternion form. The examples show how to do this, as it is easier to simulate rotational dynamics in Euler angle form.
