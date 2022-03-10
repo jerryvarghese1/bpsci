@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.spatial.transform import Rotation as R
+from scipy.interpolate import interp1d
 import bpy
 import pandas as pd
 
@@ -217,27 +218,29 @@ class anim_text:
 
         self.obj = ob
 
+        ob.name = name + '_text'
+
         self.obj.parent = parent
         self.name = name
 
+        all_frames = np.arange(1, anim.frames[-1])
+        frame_interper = interp1d(anim.frames, data, fill_value = 'extrapolate')
+
+        fixed_data = frame_interper(all_frames)
 
         if not(if_str):
             def update(self):
                 text = ob
                 cur_frame = bpy.context.scene.frame_current
                 
-                if np.any(cur_frame == anim.frames):
-                    ind = np.where(cur_frame == anim.frames)[0][0]
-                    text.data.body = ('{0:.'+str(fix_place)+'f}').format(data[ind]) + ' ' + label
+                text.data.body = ('{0:.'+str(fix_place)+'f}').format(fixed_data[cur_frame-1]) + ' ' + label
                     
         else:
             def update(self):
                 text = ob
                 cur_frame = bpy.context.scene.frame_current
                 
-                if np.any(cur_frame == anim.frames):
-                    ind = np.where(cur_frame == anim.frames)[0][0]
-                    text.data.body = data[ind]
+                text.data.body = ('{0:.'+str(fix_place)+'f}').format(fixed_data[cur_frame-1]) + ' ' + label
 
         def register():
             bpy.app.handlers.frame_change_post.append(update)
