@@ -206,3 +206,43 @@ class dyn_vec:
             self.point_rf.ob.keyframe_insert(data_path='location', frame=cur_frame)
             self.parent_rf.ob.keyframe_insert(data_path='scale', frame=cur_frame)
 
+class anim_text:
+    def __init__(self, name, parent, anim, data, label, fix_place, if_str):
+
+        self.anim = anim
+
+        bpy.ops.object.text_add()
+        ob=bpy.context.object
+        ob.data.body = "INIT"
+
+        self.obj = ob
+
+        self.obj.parent = parent
+        self.name = name
+
+
+        if not(if_str):
+            def update(self):
+                text = ob
+                cur_frame = bpy.context.scene.frame_current
+                
+                if np.any(cur_frame == anim.frames):
+                    ind = np.where(cur_frame == anim.frames)[0][0]
+                    text.data.body = ('{0:.'+str(fix_place)+'f}').format(data[ind]) + ' ' + label
+                    
+        else:
+            def update(self):
+                text = ob
+                cur_frame = bpy.context.scene.frame_current
+                
+                if np.any(cur_frame == anim.frames):
+                    ind = np.where(cur_frame == anim.frames)[0][0]
+                    text.data.body = data[ind]
+
+        def register():
+            bpy.app.handlers.frame_change_post.append(update)
+
+        def unregister():
+            bpy.app.handlers.frame_change_post.remove(update)
+
+        register()
