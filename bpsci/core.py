@@ -222,30 +222,26 @@ class anim_text:
 
         self.obj.parent = parent
         self.name = name
-
+        
         all_frames = np.arange(1, anim.frames[-1])
         frame_interper = interp1d(anim.frames, data, fill_value = 'extrapolate')
 
         fixed_data = frame_interper(all_frames)
 
         if not(if_str):
-            def update(self):
+            def recalculate_text(scene):
                 text = ob
                 cur_frame = bpy.context.scene.frame_current
                 
                 text.data.body = ('{0:.'+str(fix_place)+'f}').format(fixed_data[cur_frame-1]) + ' ' + label
-                    
+
         else:
-            def update(self):
+            def recalculate_text(scene):
                 text = ob
                 cur_frame = bpy.context.scene.frame_current
                 
-                text.data.body = ('{0:.'+str(fix_place)+'f}').format(fixed_data[cur_frame-1]) + ' ' + label
+                text.data.body = data + ' ' + label
+                    
 
-        def register():
-            bpy.app.handlers.frame_change_post.append(update)
+            bpy.app.handlers.frame_change_pre.append(recalculate_text)
 
-        def unregister():
-            bpy.app.handlers.frame_change_post.remove(update)
-
-        register()
