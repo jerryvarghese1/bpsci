@@ -21,6 +21,7 @@ my_obj = bpsc.dyn_obj(obj, pa, euler_type, parent, anim)
 <br>```non_rot```: ```bpy.data.object``` of type Empty which is the non-rotating reference frame for the object, aka contains only the translation kinematics of the animation
 <br>```pa_axes```: ```bpy.data.object``` of type Empty which is the principle axes of the rotation
 <br>```parent```: ```bpy.data.object``` of any type which is the parent of this dynamic_object
+<br>```ob```: the ```bpy.data.object``` that is being animated
 
 #### Methods
 
