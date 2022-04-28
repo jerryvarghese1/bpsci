@@ -1,5 +1,5 @@
-bpsci package
-=============
+bpsci Documentation
+===================
 
 Submodules
 ----------
