@@ -1,8 +1,16 @@
-<h1><img src="https://user-images.githubusercontent.com/63359305/153303226-3c4b89a6-4d05-4850-a832-0dafebd3454d.png">  bpsci</h1>
+<a href="https://github.com/jerryvarghese1/bpsci">
+    <img src="https://user-images.githubusercontent.com/63359305/168609979-5ccf9b93-dc78-4fe3-8dff-a75ae6152200.png" alt="bpsci logo" title="bpsci" align="right" height="60" />
+</a>
+
+# bpsci
+
+![License](https://img.shields.io/github/license/jerryvarghese1/bpsci?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/jerryvarghese1/bpsci?style=for-the-badge)
   
-High level abstraction meant to create six degree of freedom technical animations in Blender.
+High level abstraction of Python scripting in Blender that can create six degree of freedom technical animations/
 <br>
-#### View the documentation [here](https://jerryvarghese1.github.io/bpsci/).
+#### View the documentation [here](https://jerryvarghese1.github.io/bpsci/)
+
 
 https://user-images.githubusercontent.com/63359305/145697796-13da2258-a6b2-441f-9872-fbbc964e5557.mp4
 ##### Model Attribution - [Snowfall](https://sketchfab.com/3d-models/galileo-orbiter-19c3c6e0c1b548919d11681065fcf65a)
