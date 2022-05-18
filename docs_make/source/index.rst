@@ -7,8 +7,14 @@
   :width: 400
   :alt: Alternative text
 
-Welcome to bpsci's documentation!
+
+Welcome to bpsci!
 =================================
+
+bpsci is a Python library for Blender that can be used to create scientific dynamics visualizations. 
+
+To install bpsci and get started with an example, see the :doc:`Quickstart Guide <quickstart>`.
+To view the documentation, see the :doc:`documentation <bpsci>`
 
 .. toctree::
    :maxdepth: 2
