@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bpsci package &mdash; bpsci 0.3.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Quickstart Guide" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> bpsci
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">bpsci package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bpsci.core">bpsci.core module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-blocks-of-a-dynamic-visualization-bpsci-core">Building Blocks of a Dynamic Visualization - <code class="xref py py-mod docutils literal notranslate"><span class="pre">bpsci.core</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bpsci.utils">bpsci.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bpsci">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">bpsci</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>bpsci package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/bpsci.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bpsci-package">
+<h1>bpsci package<a class="headerlink" href="#bpsci-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-bpsci.core">
+<span id="bpsci-core-module"></span><h2>bpsci.core module<a class="headerlink" href="#module-bpsci.core" title="Permalink to this headline"></a></h2>
+<section id="building-blocks-of-a-dynamic-visualization-bpsci-core">
+<h3>Building Blocks of a Dynamic Visualization - <a class="reference internal" href="#module-bpsci.core" title="bpsci.core"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bpsci.core</span></code></a><a class="headerlink" href="#building-blocks-of-a-dynamic-visualization-bpsci-core" title="Permalink to this headline"></a></h3>
+<p>The bpsci core is a collection of classes and methods used to create dynamic visualizations.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bpsci.core.anim_text">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bpsci.core.</span></span><span class="sig-name descname"><span class="pre">anim_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_place</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.anim_text" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Creates animated text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the Blender object name of the text (‘_text’ will be appended to this name)</p></li>
+<li><p><strong>parent</strong> (<em>bpy.data.object</em>) – the Blender object parent of this text</p></li>
+<li><p><strong>anim</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpsci.core.anim</span></code>) – class object that was used to initialize the animation</p></li>
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – the data to be displayed (same length as the number of animated frames)</p></li>
+<li><p><strong>label</strong> (<em>str</em>) – a label to append to the text (if no label is desired, pass ‘’)</p></li>
+<li><p><strong>fix_place</strong> (<em>int</em>) – the number of decimal places to fix the text to</p></li>
+<li><p><strong>if_str</strong> (<em>bool</em>) – whether or not the data is a numerical or string vector. Currently only numerical vectors are supported.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bpsci.core.curve_to_mesh">
+<span class="sig-prename descclassname"><span class="pre">bpsci.core.</span></span><span class="sig-name descname"><span class="pre">curve_to_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curve</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.curve_to_mesh" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bpsci.core.</span></span><span class="sig-name descname"><span class="pre">dyn_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">euler_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.dyn_obj" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The main building block of all dynamic visualizations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>bpy.data.object</em>) – the Blender object that will be animated</p></li>
+<li><p><strong>pa</strong> (<em>np.ndarray</em>) – the offset of the principal axes specified by the :param: ` euler_type:</p></li>
+<li><p><strong>cog</strong> (<em>tuple</em>) – the center of gravity as defined from the origin of the 3D model</p></li>
+<li><p><strong>euler_type</strong> (<em>str</em>) – the Euler angle order (i.e. ‘xyz’ for 1,2,3 or ‘zxz’ for 3,1,3)</p></li>
+<li><p><strong>parent</strong> (<em>bpy.data.object</em>) – the Blender object parent of the original object</p></li>
+<li><p><strong>anim</strong> (<a class="reference internal" href="#bpsci.core.init_anim" title="bpsci.core.init_anim"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpsci.core.init_anim</span></code></a>) – class object that was used to initialize the animation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.apply_animation">
+<span class="sig-name descname"><span class="pre">apply_animation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quat_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.dyn_obj.apply_animation" title="Permalink to this definition"></a></dt>
+<dd><p>Animates a <a class="reference internal" href="#bpsci.core.dyn_obj" title="bpsci.core.dyn_obj"><code class="xref py py-class docutils literal notranslate"><span class="pre">dyn_obj</span></code></a> in the full six degrees of freedom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_list</strong> (<em>np.ndarray</em>) – a numpy array of the x position over time</p></li>
+<li><p><strong>y_list</strong> (<em>np.ndarray</em>) – a numpy array of the y position over time</p></li>
+<li><p><strong>z_list</strong> (<em>np.ndarray</em>) – a numpy array of the z position over time</p></li>
+<li><p><strong>quat_list</strong> (<em>np.ndarray</em>) – a numpy array of the quaternion over time. Can be passed None if rotation is ignored.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.apply_streamline">
+<span class="sig-name descname"><span class="pre">apply_streamline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">staticity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thickness</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.dyn_obj.apply_streamline" title="Permalink to this definition"></a></dt>
+<dd><p>Gives a <a class="reference internal" href="#bpsci.core.dyn_obj" title="bpsci.core.dyn_obj"><code class="xref py py-class docutils literal notranslate"><span class="pre">dyn_obj</span></code></a> a dynamic or static trail that shows its position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>staticity</strong> (<em>str</em>) – a string [‘dynamic’ or ‘static’] that specifies whether the streamline is animated or static</p></li>
+<li><p><strong>x_list</strong> (<em>np.ndarray</em>) – a numpy array of the x position over time</p></li>
+<li><p><strong>y_list</strong> (<em>np.ndarray</em>) – a numpy array of the y position over time</p></li>
+<li><p><strong>z_list</strong> (<em>np.ndarray</em>) – a numpy array of the z position over time</p></li>
+<li><p><strong>quat_list</strong> (<em>np.ndarray</em>) – a numpy array of the quaternion over time. Can be passed None if rotation is ignored.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.body">
+<span class="sig-name descname"><span class="pre">body</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.body" title="Permalink to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#bpsci.core.ref_frame" title="bpsci.core.ref_frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">ref_frame</span></code></a>: the body reference frame (untransformed principal axes)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.euler_pa">
+<span class="sig-name descname"><span class="pre">euler_pa</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.euler_pa" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>np.ndarray</cite>: the offset of the principal axes specified by the :param: ` euler_type:</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.frames">
+<span class="sig-name descname"><span class="pre">frames</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.frames" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>np.ndarray</cite>: the frames that Blender will animate and have corresponding data for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.name" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>str</cite>: the Blender object name of the original object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.non_rot">
+<span class="sig-name descname"><span class="pre">non_rot</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.non_rot" title="Permalink to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#bpsci.core.ref_frame" title="bpsci.core.ref_frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">ref_frame</span></code></a>: the non-rotational reference frame (owner of translational movement only)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.ob">
+<span class="sig-name descname"><span class="pre">ob</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.ob" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>bpy.data.object</cite>: the Blender object that will be animated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.pa_axes">
+<span class="sig-name descname"><span class="pre">pa_axes</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.pa_axes" title="Permalink to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#bpsci.core.ref_frame" title="bpsci.core.ref_frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">ref_frame</span></code></a>: the principal axes rotational reference frame (owner of rotational movement, inherits translational movement from parent)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.parent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>bpy.data.object</cite>: the Blender object parent of this reference frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.quat">
+<span class="sig-name descname"><span class="pre">quat</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.quat" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>np.ndarray</cite>: a numpy array of one quaternion that represents the principal axes offset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_obj.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#bpsci.core.dyn_obj.scale" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>float</cite>: global physical scale factor of the animation</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bpsci.core.</span></span><span class="sig-name descname"><span class="pre">dyn_vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_mag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.dyn_vec" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initializes a dynamic vector`</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<em>bpy.data.object</em>) – the Blender object the vector is associated with</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the Blender object name of the vector (‘_vector’ will be appended to this name)</p></li>
+<li><p><strong>scale_mag</strong> (<em>float</em>) – the scaling factor of the vector’s magnitude axis (purely aesthetic)</p></li>
+<li><p><strong>scale_off</strong> (<em>float</em>) – the scaling factor of the vector’s off-axes (purely aesthetic)</p></li>
+<li><p><strong>offset</strong> (<em>tuple</em><em>[</em><em>float</em><em>]</em>) – offset of vector from the parent object (purely aesthetic)</p></li>
+<li><p><strong>anim</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpsci.core.anim</span></code>) – class object that was used to initialize the animation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec.anim">
+<span class="sig-name descname"><span class="pre">anim</span></span><a class="headerlink" href="#bpsci.core.dyn_vec.anim" title="Permalink to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#bpsci.core.init_anim" title="bpsci.core.init_anim"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpsci.core.init_anim</span></code></a>: class object that was used to initialize the animation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec.animate">
+<span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.dyn_vec.animate" title="Permalink to this definition"></a></dt>
+<dd><p>Animates a dynamic vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – a numpy array of the x component over time</p></li>
+<li><p><strong>y</strong> (<em>np.ndarray</em>) – a numpy array of the y component over time</p></li>
+<li><p><strong>z</strong> (<em>np.ndarray</em>) – a numpy array of the z component over time</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec.filepath">
+<span class="sig-name descname"><span class="pre">filepath</span></span><a class="headerlink" href="#bpsci.core.dyn_vec.filepath" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>str</cite>: file path to arrow asset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec.frames">
+<span class="sig-name descname"><span class="pre">frames</span></span><a class="headerlink" href="#bpsci.core.dyn_vec.frames" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>np.ndarray</cite>: the frames that Blender will animate and have corresponding data for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#bpsci.core.dyn_vec.name" title="Permalink to this definition"></a></dt>
+<dd><p>str: the Blender object name of the vector</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><a class="headerlink" href="#bpsci.core.dyn_vec.parent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>bpy.data.object</cite>: the Blender object parent of this reference frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec.parent_rf">
+<span class="sig-name descname"><span class="pre">parent_rf</span></span><a class="headerlink" href="#bpsci.core.dyn_vec.parent_rf" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>bpy.data.object</cite>: holds the vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.dyn_vec.vec">
+<span class="sig-name descname"><span class="pre">vec</span></span><a class="headerlink" href="#bpsci.core.dyn_vec.vec" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>bpy.data.object</cite>: the actual arrow asset</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bpsci.core.init_anim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bpsci.core.</span></span><span class="sig-name descname"><span class="pre">init_anim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed_up</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.init_anim" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Sets up the global animation information such speed up and global scale</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>np.ndarray</em>) – contains the time information that corresponds with the six degrees of freedom data</p></li>
+<li><p><strong>speed_up</strong> (<em>float</em>) – the ‘real time speed up’ or the ratio of the duration of the data to the duration of the animation</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.init_anim.frame_duration">
+<span class="sig-name descname"><span class="pre">frame_duration</span></span><a class="headerlink" href="#bpsci.core.init_anim.frame_duration" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>int</cite>: number of total frames in animation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.init_anim.frame_rate">
+<span class="sig-name descname"><span class="pre">frame_rate</span></span><a class="headerlink" href="#bpsci.core.init_anim.frame_rate" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>float</cite>: frame rate of animation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.init_anim.frames">
+<span class="sig-name descname"><span class="pre">frames</span></span><a class="headerlink" href="#bpsci.core.init_anim.frames" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>np.ndarray</cite>: the frames that Blender will animate and have corresponding data for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.init_anim.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#bpsci.core.init_anim.scale" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>float</cite>: global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.init_anim.speed_up">
+<span class="sig-name descname"><span class="pre">speed_up</span></span><a class="headerlink" href="#bpsci.core.init_anim.speed_up" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>float</cite>: the “real time speed up” or the ratio of the duration of the data to the duration of the animation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.init_anim.t">
+<span class="sig-name descname"><span class="pre">t</span></span><a class="headerlink" href="#bpsci.core.init_anim.t" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>np.ndarray</cite>: contains the time information that corresponds with the six degrees of freedom data</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bpsci.core.ref_frame">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bpsci.core.</span></span><span class="sig-name descname"><span class="pre">ref_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.ref_frame" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initializes a reference frame that other objects and animations can be the child of. 
+In blender, this takes the form of an Empty object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the Blender object name of the reference frame</p></li>
+<li><p><strong>parent</strong> (<em>bpy.data.object</em>) – the Blender object parent of this reference frame</p></li>
+<li><p><strong>anim</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpsci.core.anim</span></code>) – class object that was used to initialize the animation</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="bpsci.core.ref_frame.dynamic_6DOF">
+<span class="sig-name descname"><span class="pre">dynamic_6DOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.ref_frame.dynamic_6DOF" title="Permalink to this definition"></a></dt>
+<dd><p>Animates the reference frame over time.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is currently an internal method. This method will be exposed properly in future updates</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.2.30.</span></p>
+</div>
+<p>May be useful for continually offsetting the reference frame from the parent object (i.e. for center of mass of principal axes offset for changing mass/distribution)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quat</strong> (<em>np.ndarray</em>) – an numpy array of quaternions over time</p></li>
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – the x position over time</p></li>
+<li><p><strong>y</strong> (<em>np.ndarray</em>) – the y position over time</p></li>
+<li><p><strong>z</strong> (<em>np.ndarray</em>) – the z position over time</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.ref_frame.frames">
+<span class="sig-name descname"><span class="pre">frames</span></span><a class="headerlink" href="#bpsci.core.ref_frame.frames" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>np.ndarray</cite>: the frames that Blender will animate and have corresponding data for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.ref_frame.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#bpsci.core.ref_frame.name" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>str</cite>: the Blender object name of the reference frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.ref_frame.ob">
+<span class="sig-name descname"><span class="pre">ob</span></span><a class="headerlink" href="#bpsci.core.ref_frame.ob" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>bpy.data.object</cite>: the Blender object that represents this reference frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.ref_frame.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><a class="headerlink" href="#bpsci.core.ref_frame.parent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>bpy.data.object</cite>: the Blender object parent of this reference frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bpsci.core.ref_frame.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#bpsci.core.ref_frame.scale" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>float</cite>: global physical scale factor of the animation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bpsci.core.ref_frame.static_6DOF">
+<span class="sig-name descname"><span class="pre">static_6DOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.ref_frame.static_6DOF" title="Permalink to this definition"></a></dt>
+<dd><p>Places the reference frame in one specified static location.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is currently an internal method. This method will be exposed properly in future updates</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.2.30.</span></p>
+</div>
+<p>May be useful for offsetting the reference frame from the parent object (i.e. for center of mass of principal axes offset)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quat</strong> (<em>np.ndarray</em>) – an numpy array of one quaternion</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – the x position</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – the y position</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – the z position</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="module-bpsci.utils">
+<span id="bpsci-utils-module"></span><h2>bpsci.utils module<a class="headerlink" href="#module-bpsci.utils" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="bpsci.utils.bpy_obj">
+<span class="sig-prename descclassname"><span class="pre">bpsci.utils.</span></span><span class="sig-name descname"><span class="pre">bpy_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.utils.bpy_obj" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Blender object associated with the passed name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_name</strong> (<em>str</em>) – the object name</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>:returns (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpy.data.object</span></code>) the Blender object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bpsci.utils.erase_others">
+<span class="sig-prename descclassname"><span class="pre">bpsci.utils.</span></span><span class="sig-name descname"><span class="pre">erase_others</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.utils.erase_others" title="Permalink to this definition"></a></dt>
+<dd><p>Erase all objects associated with the passed object name (that is not the original object).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this function will delete any object that has the passed object name as a substring</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.2.30.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_name</strong> (<em>str</em>) – the object name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bpsci.utils.erase_self">
+<span class="sig-prename descclassname"><span class="pre">bpsci.utils.</span></span><span class="sig-name descname"><span class="pre">erase_self</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.utils.erase_self" title="Permalink to this definition"></a></dt>
+<dd><p>Erase object from name passed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_name</strong> (<em>str</em>) – the object name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bpsci.utils.erase_vector">
+<span class="sig-prename descclassname"><span class="pre">bpsci.utils.</span></span><span class="sig-name descname"><span class="pre">erase_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.utils.erase_vector" title="Permalink to this definition"></a></dt>
+<dd><p>Erase vector from name of the associated <code class="xref py py-class docutils literal notranslate"><span class="pre">bpsci.core.dyn_vector</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_name</strong> (<em>str</em>) – the name passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">bpsci.core.dyn_vector</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bpsci.utils.euler2quat">
+<span class="sig-prename descclassname"><span class="pre">bpsci.utils.</span></span><span class="sig-name descname"><span class="pre">euler2quat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angles1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">euler_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.utils.euler2quat" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a set of Euler angles over time and returns the equivalent quaternion representation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angles1</strong> (<em>np.ndarray</em>) – first set of angles over time</p></li>
+<li><p><strong>angles2</strong> (<em>np.ndarray</em>) – second set of angles over time</p></li>
+<li><p><strong>angles3</strong> (<em>np.ndarray</em>) – third set of angles over time</p></li>
+<li><p><strong>euler_type</strong> (<em>str</em>) – the Euler angle order (i.e. ‘xyz’ for 1,2,3 or ‘zxz’ for 3,1,3)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">returns (nd.array)</dt>
+<dd class="field-odd"><p>a numpy array of quaternions over time</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-bpsci">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-bpsci" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Jerry Varghese.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
