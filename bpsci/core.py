@@ -13,10 +13,12 @@ import pandas as pd
 class init_anim:
     """
     Sets up the global animation information such speed up and global scale
+
     :param np.ndarray t: contains the time information that corresponds with the six degrees of freedom data 
     :param float speed_up: the 'real time speed up' or the ratio of the duration of the data to the duration of the animation 
     :param float scale: global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size
     """
+
     def __init__(self, t, speed_up, scale):
 
         self.frame_rate = bpy.context.scene.render.fps
@@ -44,12 +46,13 @@ class ref_frame:
     """
     Initializes a reference frame that other objects and animations can be the child of. 
     In blender, this takes the form of an Empty object.
+
     :param str name: the Blender object name of the reference frame
     :param bpy.data.object parent: the Blender object parent of this reference frame 
     :param anim: class object that was used to initialize the animation
     :type anim: :class:`bpsci.core.anim`
-    
     """
+
     def __init__(self, name, parent, anim):
 
         
@@ -79,15 +82,19 @@ class ref_frame:
     def static_6DOF(self, quat, x, y, z):
         """
         Places the reference frame in one specified static location.
+
         .. warning::
             This is currently an internal method. This method will be exposed properly in future updates
         .. versionadded:: 0.2.30
+
         May be useful for offsetting the reference frame from the parent object (i.e. for center of mass of principal axes offset)
+        
         :param np.ndarray quat: an numpy array of one quaternion
         :param float x: the x position 
         :param float y: the y position 
         :param float z: the z position 
         """
+
         if not(quat is None):
             self.ob.rotation_quaternion[1] = quat[0]
             self.ob.rotation_quaternion[2] = quat[1]
@@ -101,10 +108,13 @@ class ref_frame:
     def dynamic_6DOF(self, quat, x_list, y_list, z_list):
         """
         Animates the reference frame over time.
+        
         .. warning::
             This is currently an internal method. This method will be exposed properly in future updates
         .. versionadded:: 0.2.30
+        
         May be useful for continually offsetting the reference frame from the parent object (i.e. for center of mass of principal axes offset for changing mass/distribution)
+        
         :param np.ndarray quat: an numpy array of quaternions over time
         :param np.ndarray x: the x position over time
         :param np.ndarray y: the y position over time
@@ -140,15 +150,16 @@ class ref_frame:
 class dyn_obj:
     """
     The main building block of all dynamic visualizations 
+    
     :param bpy.data.object obj: the Blender object that will be animated
     :param np.ndarray pa: the offset of the principal axes specified by the :param: ` euler_type:
     :param tuple cog: the center of gravity as defined from the origin of the 3D model
     :param str euler_type: the Euler angle order (i.e. 'xyz' for 1,2,3 or 'zxz' for 3,1,3)
     :param bpy.data.object parent: the Blender object parent of the original object 
     :param anim: class object that was used to initialize the animation
-    :type anim: :class:`bpsci.core.init_anim`
-        
+    :type anim: :class:`bpsci.core.init_anim`    
     """
+
     def __init__(self, obj, pa, cog, euler_type, parent, anim):
         
 
@@ -189,9 +200,9 @@ class dyn_obj:
         """:type: `str`: the Blender object name of the original object"""
 
     def apply_animation(self, x_list, y_list, z_list, quat_list):
-
         """
         Animates a :class:`~bpsci.core.dyn_obj` in the full six degrees of freedom
+        
         :param np.ndarray x_list: a numpy array of the x position over time
         :param np.ndarray y_list: a numpy array of the y position over time
         :param np.ndarray z_list: a numpy array of the z position over time
@@ -202,6 +213,16 @@ class dyn_obj:
         self.non_rot.dynamic_6DOF(None, x_list, y_list, z_list)
 
     def apply_streamline(self, staticity, int_x, int_y, int_z, thickness):
+        """
+        Gives a :class:`~bpsci.core.dyn_obj` a dynamic or static trail that shows its position
+        
+        :param str staticity: a string ['dynamic' or 'static'] that specifies whether the streamline is animated or static
+        :param np.ndarray x_list: a numpy array of the x position over time
+        :param np.ndarray y_list: a numpy array of the y position over time
+        :param np.ndarray z_list: a numpy array of the z position over time
+        :param np.ndarray quat_list: a numpy array of the quaternion over time. Can be passed None if rotation is ignored.
+        """
+
         name = self.name+'_streamline'
         frames = self.frames
 
@@ -241,6 +262,7 @@ class dyn_obj:
 class dyn_vec:
     """
     Initializes a dynamic vector`
+    
     :param bpy.data.object parent: the Blender object the vector is associated with
     :param str name: the Blender object name of the vector ('_vector' will be appended to this name)
     :param float scale_mag: the scaling factor of the vector's magnitude axis (purely aesthetic)
@@ -249,6 +271,7 @@ class dyn_vec:
     :param anim: class object that was used to initialize the animation
     :type anim: :class:`bpsci.core.anim`
     """
+
     def __init__(self, parent, name, scale_mag, scale_off, offset, anim):
 
         
@@ -286,6 +309,7 @@ class dyn_vec:
     def animate(self, x, y, z):
         """
         Animates a dynamic vector
+        
         :param np.ndarray x: a numpy array of the x component over time
         :param np.ndarray y: a numpy array of the y component over time
         :param np.ndarray z: a numpy array of the z component over time
@@ -333,6 +357,7 @@ class dyn_vec:
 class anim_text:
     """
     Creates animated text
+    
     :param str name: the Blender object name of the text ('_text' will be appended to this name)
     :param bpy.data.object parent: the Blender object parent of this text 
     :param anim: class object that was used to initialize the animation
@@ -342,6 +367,7 @@ class anim_text:
     :param int fix_place: the number of decimal places to fix the text to
     :param bool if_str: whether or not the data is a numerical or string vector. Currently only numerical vectors are supported.
     """
+    
     def __init__(self, name, parent, anim, data, label, fix_place, if_str):
 
         
