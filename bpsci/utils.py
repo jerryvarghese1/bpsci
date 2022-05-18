@@ -5,7 +5,7 @@ import pandas as pd
 
 def erase_others(obj_name):
     """
-        Erase all objects associated with the passed object name. 
+        Erase all objects associated with the passed object name (that is not the original object). 
 
         .. warning::
             this function will delete any object that has the passed object name as a substring
@@ -34,6 +34,27 @@ def erase_others(obj_name):
             relatives.append(member)
             
     [bpy.data.objects.remove(bpy.data.objects[obj_name]) for obj_name in relatives]
+
+def erase_vector(name):
+    """
+        Erase vector from name of the associated :class:`bpsci.core.dyn_vector` 
+
+        :param str obj_name: the name passed to :class:`bpsci.core.dyn_vector`  
+
+        """
+    obj_list = [name+'_vector', name+'_vector_empty', name+'_vector_pointing_empty']
+            
+    [bpy.data.objects.remove(bpy.data.objects[obj_name]) for obj_name in obj_list]
+
+def erase_self(obj_name):
+    """
+        Erase object from name passed
+
+        :param str obj_name: the object name
+
+        """
+            
+    bpy.data.objects.remove(bpy.data.objects[obj_name])
 
 def bpy_obj(obj_name):
     """
