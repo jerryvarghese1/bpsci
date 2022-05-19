@@ -13,12 +13,10 @@ import pandas as pd
 class init_anim:
     """
     Sets up the global animation information such speed up and global scale
-
     :param np.ndarray t: contains the time information that corresponds with the six degrees of freedom data 
     :param float speed_up: the 'real time speed up' or the ratio of the duration of the data to the duration of the animation 
     :param float scale: global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size
     """
-
     def __init__(self, t, speed_up, scale):
 
         self.frame_rate = bpy.context.scene.render.fps
@@ -30,17 +28,20 @@ class init_anim:
         self.speed_up = speed_up
         """:type: `float`: the "real time speed up" or the ratio of the duration of the data to the duration of the animation"""
         
-        self.frames = np.linspace(1, int(t[-1]*self.frame_rate/speed_up+1), len(t)).astype(int)
-        """:type: `np.ndarray`: the frames that Blender will animate and have corresponding data for"""
-        
-        self.frame_duration = self.frames[-1]
+        self.frame_duration = int(t[-1]/speed_up*self.frame_rate)
         """:type: `int`: number of total frames in animation"""
+
+        frame_interper = interp1d(np.linspace(0, t[-1]*1.00001, len(t)), np.linspace(0, self.frame_duration, len(t)))
+
+        self.frames = frame_interper(t).astype(int)
+        """:type: `np.ndarray`: the frames that Blender will animate and have corresponding data for"""
 
         self.scale = scale
         """:type: `float`: global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size"""
         
         bpy.context.scene.frame_start = 1
         bpy.context.scene.frame_end = self.frame_duration+1
+
 
 class ref_frame:
     """
@@ -255,7 +256,7 @@ class dyn_obj:
             for i in range(len(frames)):
                 cur_frame = frames[i]
 
-                bpy.data.objects[name].data.bevel_factor_end = 1/(frames[-1]) * cur_frame
+                bpy.data.objects[name].data.bevel_factor_end = i/(len(frames)-1)
                 bpy.data.objects[name].data.keyframe_insert(data_path='bevel_factor_end', frame=cur_frame)
             
 
