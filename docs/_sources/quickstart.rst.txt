@@ -20,7 +20,7 @@ Quick Installation
 
 1. Install Blender from `https://www.blender.org/ <https://www.blender.org/>`_. Any version above 2.8 should be compatible
 2. Open a python enabled command prompt. 
-3. Locate Blender's installation's python path. For Windows users, this is usually found in :file:`"C:/Program Files/Blender Foundation/Blender X.X/python"` where X.X is your version of Blender. 
+3. Locate Blender's installation's python path. For Windows users, this is usually found in :file:`"C:/Program Files/Blender Foundation/Blender X.X/X.X/python"` where X.X is your version of Blender. 
 4. Locate the :file:`python.exe` associated with your version of Blender, found in :file:`./bin/python.exe`
 5. Locate the :file:`site-packages` directory, found in :file:`./lib/site-packages`
 6. Run the following command in the command prompt
@@ -102,8 +102,9 @@ Thankfully, there is a default cube present, but for the sake of learning how to
 
     cube = bpy_obj('Cube') # This selectes the cube object
     pa_offset = (0, 0, 0) # the principal axes offset of the cube as Euler angles
+    cog_offset = (0, 0, 0) # the offset of the 3D model's origin to the object's center of mass
     parent = None # parent of the cube
-    dyn_cube = bpcore.dyn_obj(cube, pa_offset, euler_type, parent, anim) # initializes the bpsci dynamic object class
+    dyn_cube = bpcore.dyn_obj(cube, pa_offset, cog_offset, euler_type, parent, anim) # initializes the bpsci dynamic object class
     dyn_cube.apply_animation(x, y, z, quat_out) # animates object
 
 9. View your results. Navigate back to the [Layout] tab, press the [|<] button at the bottom of the Blender GUI to jump to the first frame. Press {Space} to play the animation.

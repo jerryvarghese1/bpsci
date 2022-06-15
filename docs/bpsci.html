@@ -350,16 +350,10 @@
 <dt class="sig sig-object py" id="bpsci.core.init_anim">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bpsci.core.</span></span><span class="sig-name descname"><span class="pre">init_anim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed_up</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bpsci.core.init_anim" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Sets up the global animation information such speed up and global scale</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>t</strong> (<em>np.ndarray</em>) – contains the time information that corresponds with the six degrees of freedom data</p></li>
-<li><p><strong>speed_up</strong> (<em>float</em>) – the ‘real time speed up’ or the ratio of the duration of the data to the duration of the animation</p></li>
-<li><p><strong>scale</strong> (<em>float</em>) – global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size</p></li>
-</ul>
-</dd>
-</dl>
+<p>Sets up the global animation information such speed up and global scale
+:param np.ndarray t: contains the time information that corresponds with the six degrees of freedom data 
+:param float speed_up: the ‘real time speed up’ or the ratio of the duration of the data to the duration of the animation 
+:param float scale: global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="bpsci.core.init_anim.frame_duration">
 <span class="sig-name descname"><span class="pre">frame_duration</span></span><a class="headerlink" href="#bpsci.core.init_anim.frame_duration" title="Permalink to this definition"></a></dt>
