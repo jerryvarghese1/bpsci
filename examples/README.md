@@ -15,6 +15,7 @@ This example models an low-thrust orbital rendezvous between one full cartesian 
 Each example file contains three documents. 
 - The ```.blend``` file contains the final Blender file with code already in the Scripting tab of Blender and already run. This is the final product. 
 - The ```.py``` file is the script that is run from within Blender (in the scripting tab). One can observe that it is the same code as what is in the ```.blend``` file's Scripting tab. 
+##### Please note that the API has changed slightly since the time the simulations have been created; the ```.py``` files are updated to reflect this, but the script inside the ```.blend``` file has not been updated. Copy and paste the ```.py``` file into Blender and replace the old script in the ```.blend``` file!
 - The ```.csv``` file is the source data from the simulations.
 
 ### Tips and Tricks
