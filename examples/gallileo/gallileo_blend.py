@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd       
-from scipy.spatial.transform import Rotation as R
 import bpy
 
-from bpsci import core as bpsci_core
+import bpsci.core as bpsci_core
+from bpsci.utils import euler2quat
 
 euler_pa = [.1, 0, 0] # this offsets the inertial principle axes according to the euler angle sequence below
 euler_type = 'xyz' # principal axes offset euler angle sequence
