@@ -1,5 +1,5 @@
 import bpy
-from bpsci import core as bpsc
+import bpsci.core as bpsc
 import numpy as np
 import pandas as pd
 
