@@ -10,6 +10,14 @@ from scipy.interpolate import interp1d
 import bpy
 import pandas as pd
 
+def arc_length_frac(x, y, z):
+    tmp = np.column_stack([np.diff(x) ** 2, np.diff(y) ** 2, np.diff(z) ** 2])
+    tmp2 = np.sqrt(np.sum(tmp, axis=1))
+    tmp3 = np.cumsum(tmp2)
+    tmp4 = tmp3 / tmp3[-1]
+    tmp4 = np.insert(tmp4, 0, 0)
+    return tmp4
+
 class init_anim:
     """
     Sets up the global animation information such speed up and global scale
@@ -227,6 +235,8 @@ class dyn_obj:
         name = self.name+'_streamline'
         frames = self.frames
 
+        self.arc_length_frac = arc_length_frac(int_x, int_y, int_z)
+
         int_size = len(int_x)
         int_coords = np.zeros((int_size, 3))
         int_coords[:, 0] = int_x*self.scale
@@ -252,11 +262,14 @@ class dyn_obj:
 
         int_curveOB.data.bevel_depth = thickness
 
+        bpy.data.objects[name].data.bevel_factor_mapping_end = "SEGMENTS"
+        bpy.data.objects[name].data.bevel_factor_mapping_start = "SEGMENTS"
+
         if staticity == 'dynamic':
             for i in range(len(frames)):
                 cur_frame = frames[i]
 
-                bpy.data.objects[name].data.bevel_factor_end = i/(len(frames)-1)
+                bpy.data.objects[name].data.bevel_factor_end = self.arc_length_frac[i]
                 bpy.data.objects[name].data.keyframe_insert(data_path='bevel_factor_end', frame=cur_frame)
             
 
