@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/63359305/145697796-13da2258-a6b2-441f-
 
 https://user-images.githubusercontent.com/63359305/150035416-eea8db0f-5ad4-413a-a240-fcd4bd44549f.mov
 
-
+This software was presented at the International Astronautical Congress 2022 in Paris, France.
 This is currently a work in progress. Documentation and instructions for use are incoming, as well as new features useful for scientific visualizations!
 
 ### Objectives of bpsci
