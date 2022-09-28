@@ -19,7 +19,7 @@ https://user-images.githubusercontent.com/63359305/145697796-13da2258-a6b2-441f-
 https://user-images.githubusercontent.com/63359305/150035416-eea8db0f-5ad4-413a-a240-fcd4bd44549f.mov
 
 ##### This software was presented at the International Astronautical Congress 2022 in Paris, France.
-This is currently a work in progress. Documentation and instructions for use are incoming, as well as new features useful for scientific visualizations!
+This is currently a work in progress. Documentation and instructions may be incomplete and new features useful for scientific visualizations are actively being developed!
 
 ### Objectives of bpsci
 ```bpsci``` aims to provide a six degree of freedom simulation backbone to visualize an object's displacement in three dimensions, as well as the three orientation angles, given that the time series data for each degree of freedom has already been simulated. Future functionality with additional scientifically useful visualizations will most likely be added as well.
