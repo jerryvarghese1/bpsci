@@ -9,6 +9,7 @@ from scipy.spatial.transform import Rotation as R
 from scipy.interpolate import interp1d
 import bpy
 import pandas as pd
+from mathutils import Vector
 
 def arc_length_frac(x, y, z):
     tmp = np.column_stack([np.diff(x) ** 2, np.diff(y) ** 2, np.diff(z) ** 2])
@@ -21,21 +22,21 @@ def arc_length_frac(x, y, z):
 class init_anim:
     """
     Sets up the global animation information such speed up and global scale
-    :param np.ndarray t: contains the time information that corresponds with the six degrees of freedom data 
-    :param float speed_up: the 'real time speed up' or the ratio of the duration of the data to the duration of the animation 
+    :param np.ndarray t: contains the time information that corresponds with the six degrees of freedom data
+    :param float speed_up: the 'real time speed up' or the ratio of the duration of the data to the duration of the animation
     :param float scale: global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size
     """
     def __init__(self, t, speed_up, scale):
 
         self.frame_rate = bpy.context.scene.render.fps
         """:type: `float`: frame rate of animation"""
-        
+
         self.t = t
         """:type: `np.ndarray`: contains the time information that corresponds with the six degrees of freedom data"""
-        
+
         self.speed_up = speed_up
         """:type: `float`: the "real time speed up" or the ratio of the duration of the data to the duration of the animation"""
-        
+
         self.frame_duration = int(t[-1]/speed_up*self.frame_rate)
         """:type: `int`: number of total frames in animation"""
 
@@ -46,37 +47,37 @@ class init_anim:
 
         self.scale = scale
         """:type: `float`: global physical scale factor of the animation, i.e., .1 will reduce everything to be 1/10th its original size"""
-        
+
         bpy.context.scene.frame_start = 1
         bpy.context.scene.frame_end = self.frame_duration+1
 
 
 class ref_frame:
     """
-    Initializes a reference frame that other objects and animations can be the child of. 
+    Initializes a reference frame that other objects and animations can be the child of.
     In blender, this takes the form of an Empty object.
 
     :param str name: the Blender object name of the reference frame
-    :param bpy.data.object parent: the Blender object parent of this reference frame 
+    :param bpy.data.object parent: the Blender object parent of this reference frame
     :param anim: class object that was used to initialize the animation
     :type anim: :class:`bpsci.core.anim`
     """
 
     def __init__(self, name, parent, anim):
 
-        
-        
+
+
         self.name = name
         """:type: `str`: the Blender object name of the reference frame"""
         self.parent = parent
         """:type: `bpy.data.object`: the Blender object parent of this reference frame"""
-        
+
         # Blender portion
         self.ob = bpy.data.objects.new(name, None)
         """:type: `bpy.data.object`: the Blender object that represents this reference frame"""
-        
+
         bpy.context.scene.collection.objects.link(self.ob)
-        
+
         self.ob.parent = parent
         self.ob.empty_display_type = 'ARROWS'
         self.ob.rotation_mode = 'QUATERNION'
@@ -87,7 +88,7 @@ class ref_frame:
         self.scale = anim.scale
         """:type: `float`: global physical scale factor of the animation"""
 
-        
+
     def static_6DOF(self, quat, x, y, z):
         """
         Places the reference frame in one specified static location.
@@ -97,11 +98,11 @@ class ref_frame:
         .. versionadded:: 0.2.30
 
         May be useful for offsetting the reference frame from the parent object (i.e. for center of mass of principal axes offset)
-        
+
         :param np.ndarray quat: an numpy array of one quaternion
-        :param float x: the x position 
-        :param float y: the y position 
-        :param float z: the z position 
+        :param float x: the x position
+        :param float y: the y position
+        :param float z: the z position
         """
 
         if not(quat is None):
@@ -110,20 +111,20 @@ class ref_frame:
             self.ob.rotation_quaternion[3] = quat[2]
             self.ob.rotation_quaternion[0] = quat[3]
 
-        
+
         if not((x is None or y is None) or z is None):
             self.ob.location = (x, y, z)
-        
+
     def dynamic_6DOF(self, quat, x_list, y_list, z_list):
         """
         Animates the reference frame over time.
-        
+
         .. warning::
             This is currently an internal method. This method will be exposed properly in future updates
         .. versionadded:: 0.2.30
-        
+
         May be useful for continually offsetting the reference frame from the parent object (i.e. for center of mass of principal axes offset for changing mass/distribution)
-        
+
         :param np.ndarray quat: an numpy array of quaternions over time
         :param np.ndarray x: the x position over time
         :param np.ndarray y: the y position over time
@@ -134,43 +135,43 @@ class ref_frame:
         if not(quat is None):
             for i in range(len(frames)):
                 cur_frame = frames[i]
-                
+
                 cur_quat = quat[i]
-            
+
                 self.ob.rotation_quaternion[1] = cur_quat[0]
                 self.ob.rotation_quaternion[2] = cur_quat[1]
                 self.ob.rotation_quaternion[3] = cur_quat[2]
                 self.ob.rotation_quaternion[0] = cur_quat[3]
-            
+
                 self.ob.keyframe_insert(data_path='rotation_quaternion', frame=cur_frame)
-                
+
         if not(x_list is None):
             for i in range(len(frames)):
                 cur_frame = frames[i]
                 cur_x = x_list[i]*self.scale
                 cur_y = y_list[i]*self.scale
                 cur_z = z_list[i]*self.scale
-            
+
                 self.ob.location = (cur_x, cur_y, cur_z)
-            
+
                 self.ob.keyframe_insert(data_path='location', frame=cur_frame)
-        
+
 
 class dyn_obj:
     """
-    The main building block of all dynamic visualizations 
-    
+    The main building block of all dynamic visualizations
+
     :param bpy.data.object obj: the Blender object that will be animated
     :param np.ndarray pa: the offset of the principal axes specified by the :param: ` euler_type:
     :param tuple cog: the center of gravity as defined from the origin of the 3D model
     :param str euler_type: the Euler angle order (i.e. 'xyz' for 1,2,3 or 'zxz' for 3,1,3)
-    :param bpy.data.object parent: the Blender object parent of the original object 
+    :param bpy.data.object parent: the Blender object parent of the original object
     :param anim: class object that was used to initialize the animation
-    :type anim: :class:`bpsci.core.init_anim`    
+    :type anim: :class:`bpsci.core.init_anim`
     """
 
     def __init__(self, obj, pa, cog, euler_type, parent, anim):
-        
+
 
         self.parent = parent
         """:type: `bpy.data.object`: the Blender object parent of this reference frame"""
@@ -182,24 +183,24 @@ class dyn_obj:
 
         self.ob = obj
         """:type: `bpy.data.object`: the Blender object that will be animated"""
-        
+
         self.euler_pa = pa
         """:type: `np.ndarray`: the offset of the principal axes specified by the :param: ` euler_type:"""
-        
+
         self.quat = R.from_euler(euler_type, pa).as_quat()
         """:type: `np.ndarray`: a numpy array of one quaternion that represents the principal axes offset"""
-        
+
         self.non_rot = ref_frame(obj.name+'_non_rot', parent, anim)
         """:class:`~bpsci.core.ref_frame`: the non-rotational reference frame (owner of translational movement only)"""
-        
+
         self.pa_axes = ref_frame(obj.name+'_pa', self.non_rot.ob, anim)
         """:class:`~bpsci.core.ref_frame`: the principal axes rotational reference frame (owner of rotational movement, inherits translational movement from parent)"""
 
         self.pa_axes.static_6DOF(self.quat, None, None, None)
-        
+
         self.body = ref_frame(obj.name+'_body', self.pa_axes.ob, anim)
         """:class:`~bpsci.core.ref_frame`: the body reference frame (untransformed principal axes)"""
-        
+
         obj.parent = self.body.ob
         obj.scale = (self.scale, self.scale, self.scale)
 
@@ -211,7 +212,7 @@ class dyn_obj:
     def apply_animation(self, x_list, y_list, z_list, quat_list):
         """
         Animates a :class:`~bpsci.core.dyn_obj` in the full six degrees of freedom
-        
+
         :param np.ndarray x_list: a numpy array of the x position over time
         :param np.ndarray y_list: a numpy array of the y position over time
         :param np.ndarray z_list: a numpy array of the z position over time
@@ -224,7 +225,7 @@ class dyn_obj:
     def apply_streamline(self, staticity, int_x, int_y, int_z, thickness):
         """
         Gives a :class:`~bpsci.core.dyn_obj` a dynamic or static trail that shows its position
-        
+
         :param str staticity: a string ['dynamic' or 'static'] that specifies whether the streamline is animated or static
         :param np.ndarray x_list: a numpy array of the x position over time
         :param np.ndarray y_list: a numpy array of the y position over time
@@ -242,25 +243,27 @@ class dyn_obj:
         int_coords[:, 0] = int_x*self.scale
         int_coords[:, 1] = int_y*self.scale
         int_coords[:, 2] = int_z*self.scale
+        coords_list = int_coords.tolist()
 
-        int_curve = bpy.data.curves.new(name, type='CURVE')
-        int_curve.dimensions = '3D'
-        int_curve.resolution_u = 2
+        # make a new curve
+        crv = bpy.data.curves.new('crv', 'CURVE')
+        crv.dimensions = '3D'
 
-        # map coords to spline
-        int_line = int_curve.splines.new('NURBS')
-        int_line.points.add(len(int_coords))
-        for i, coord in enumerate(int_coords):
-            x,y,z = coord
-            int_line.points[i].co = (x, y, z, 1)
+        # make a new spline in that curve
+        spline = crv.splines.new(type='POLY')
 
-        # create Object
-        int_curveOB = bpy.data.objects.new(name, int_curve)
+        # a spline point for each point
+        spline.points.add(len(coords_list)-1) # theres already one point by default
 
-        # attach to scene and validate context
-        bpy.context.collection.objects.link(int_curveOB)
+        # assign the point coordinates to the spline points
+        for p, new_co in zip(spline.points, coords_list):
+            p.co = (new_co + [1.0]) # (add nurbs weight)
 
-        int_curveOB.data.bevel_depth = thickness
+        # make a new object with the curve
+        obj = bpy.data.objects.new(name, crv)
+        bpy.context.scene.collection.objects.link(obj)
+
+        bpy.data.objects[name].data.bevel_depth = thickness
 
         bpy.data.objects[name].data.bevel_factor_mapping_end = "SEGMENTS"
         bpy.data.objects[name].data.bevel_factor_mapping_start = "SEGMENTS"
