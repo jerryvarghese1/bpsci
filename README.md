@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/github/license/jerryvarghese1/bpsci?style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/jerryvarghese1/bpsci?style=for-the-badge)
   
-High level abstraction of Python scripting in Blender that can create six degree of freedom technical animations
+High level abstraction of Python scripting in Blender that can create six degree of freedom technical animations. Known to work with Blender 3.6
 <br>
 #### View the documentation [here](https://jerryvarghese1.github.io/bpsci/)
 
